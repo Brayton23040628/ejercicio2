@@ -1,0 +1,15 @@
+{
+  "name": "ejercicio2-formulario-accesible",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "test:html": "html-validate index.html",
+    "test:quality": "node tests/quality.mjs",
+    "test": "npm run test:html && npm run test:quality"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.10.2",
+    "html-validate": "^9.44.0",
+    "playwright": "^1.55.0"
+  }
+}

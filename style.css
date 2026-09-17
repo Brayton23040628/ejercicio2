@@ -1,0 +1,37 @@
+* { box-sizing: border-box; }
+
+body { font-family: Arial, sans-serif; background: #f7f8fb; color: #1c2333; }
+
+main {
+  max-width: 420px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+}
+
+.campo { margin-bottom: 16px; display: flex; flex-direction: column; gap: 4px; }
+label { font-weight: 600; }
+
+input[type="text"], input[type="email"], input[type="tel"], input[type="password"] {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+input:invalid { border-color: #d64545; }
+input:valid { border-color: #1f9d55; }
+input:focus { outline: 3px solid #2f6fed; outline-offset: 1px; }
+
+.campo-checkbox { flex-direction: row; align-items: center; gap: 8px; }
+.mensaje-error { color: #d64545; font-size: .85rem; min-height: 1.1em; }
+.mensaje-exito { color: #1f9d55; font-weight: 600; }
+
+button[type="submit"] {
+  padding: 10px 16px;
+  background: #2f6fed;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
