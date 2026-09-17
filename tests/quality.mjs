@@ -40,8 +40,9 @@ if (insecureUrls.length > 0) {
 }
 
 const browser = await chromium.launch({ headless: true });
+const context = await browser.newContext({ viewport: { width: 1280, height: 800 } });
 try {
-  const page = await browser.newPage({ viewport: { width: 1280, height: 800 } });
+  const page = await context.newPage();
   await page.goto(`http://127.0.0.1:${port}`, { waitUntil: "networkidle" });
 
   const semanticChecks = await page.evaluate(() => ({
@@ -84,6 +85,7 @@ try {
 
   console.log("Calidad OK: semántica, WCAG 2 AA, enlaces HTTPS y responsive.");
 } finally {
+  await context.close();
   await browser.close();
   server.close();
 }
