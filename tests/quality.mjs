@@ -29,6 +29,8 @@ const server = createServer(async (request, response) => {
   }
 });
 
+await new Promise((resolve) => server.listen(port, "127.0.0.1", resolve));
+
 const html = await readFile(join(root, "index.html"), "utf8");
 const externalUrls = [...html.matchAll(/(?:href|src)=["'](https?:\/\/[^"']+)["']/gi)]
   .map((match) => match[1]);
